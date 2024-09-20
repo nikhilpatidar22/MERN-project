@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet"  type="text/css" href="style.css">
+</head>
+<body>
+    <div class="div">
+        <a href="/">home</a>
+        <a href="/logout">logout</a>
+        <h1>showing post</h1>
+        <%if(post.length===0){%>
+            <h1>no post yet</h1>
+        <%}%>
+        <%post.forEach(function (val){%>
+            <div class="div3">
+                <div class="div4"><img src="<%= val.image %>" > </div>
+            </div>
+        <%})%>
+        
+
+        <h1>post by <%= user.name%></h1>
+
+        <a href="/profile">new post</a>
+    </div>
+   
+</body>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet"  type="text/css" href="style.css">
+</head>
+<body>
+    <div class="div">
+        <a href="/logout">logout</a>
+        <h1><%= user.name%></h1>
+        <h3>create post</h3>
+        <form action="/<%= user._id%>" method="post">
+            <input type="text" name="image" >
+            <button>post</button>
+        </form>
+       
+        
+        
+    </div>
+   
+</body>
