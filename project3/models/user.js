@@ -1,7 +1,7 @@
 
 const mongoose=require('mongoose');
 
-mongoose.connect("mongodb+srv://nikhil22:10452003@cluster0.7e0eb2w.mongodb.net/project3");
+mongoose.connect("mongodb://localhost:27017/project3");
 
 const userSchema=mongoose.Schema({
     name:String,
