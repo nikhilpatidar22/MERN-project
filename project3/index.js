@@ -10,7 +10,7 @@ const jwt=require('jsonwebtoken');
 
 const app=express();
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'/public')));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.set('views', path.join(__dirname, 'views'))
@@ -22,7 +22,7 @@ app.get("/",(req,res)=>{
 })
 
 app.post('/create',async (req,res)=>{
-    let {name, email, age, password}= req.body;
+    let {name, email, password}= req.body;
 
     let user= await userModel.findOne({email})
     if (user) return res.send("error");
@@ -32,7 +32,7 @@ app.post('/create',async (req,res)=>{
             let createduser = await userModel.create({
                 name : name,
                 email : email,
-                age : age,
+                
                 password: hash
             });
             let token= await jwt.sign({email:email,userid:createduser._id},"shhh")
